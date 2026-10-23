@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Bainbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/global.js" defer></script>
+  <style>
+    .nf-page{width:100%;box-sizing:border-box;background:#FAFAF7;color:#0B0C10;font-family:'Poppins',system-ui,sans-serif;overflow-x:clip;min-height:100vh;display:flex;flex-direction:column}
+    .nf-main{position:relative;flex:1;max-width:1200px;width:100%;margin:0 auto;padding:72px 32px 96px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .nf-glow{position:absolute;top:-40px;left:50%;width:min(900px,120%);height:520px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0%,rgba(63,91,217,0.16),transparent 65%);pointer-events:none}
+    .nf-dots{position:absolute;top:0;left:50%;width:min(1100px,140%);height:640px;transform:translateX(-50%);background-image:radial-gradient(circle,rgba(11,12,16,0.3) 1px,transparent 1.6px);background-size:16px 16px;-webkit-mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 58%);mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 58%);pointer-events:none}
+    .nf-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:24px}
+    .nf-badge{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;border:1px solid rgba(11,12,16,0.12);padding:8px 16px;border-radius:999px;background:#FFFFFF}
+    .nf-badge i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#3F5BD9;margin-right:10px}
+    .nf-code{font-size:clamp(96px,22vw,240px);font-weight:700;letter-spacing:-0.06em;line-height:0.85;background:linear-gradient(180deg,rgba(11,12,16,0.14),rgba(11,12,16,0.02));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+    .nf-mascot{width:120px;height:120px;border-radius:30px;background-color:#fff;background-image:url(/assets/agents.png);background-size:840px 120px;background-position:0 0;box-shadow:0 16px 40px rgba(11,12,16,0.12);margin-top:-8px}
+    .nf-title{margin:0;max-width:720px;font-size:clamp(30px,5vw,56px);line-height:1.05;font-weight:300;letter-spacing:-0.04em}
+    .nf-title em{font-style:italic;font-weight:300}
+    .nf-text{margin:0;max-width:480px;font-size:18px;line-height:1.6;color:#5B606C}
+    .nf-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    .nf-btn{background:#0B0C10;color:#FAFAF7;font-size:15px;font-weight:500;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;box-shadow:0 8px 24px rgba(11,12,16,0.2)}
+    .nf-btn-alt{color:#0B0C10;border:1px solid rgba(11,12,16,0.18);font-size:15px;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+    .nf-links{display:flex;gap:8px 24px;flex-wrap:wrap;justify-content:center;margin-top:16px;font-size:15px;color:#5B606C}
+    .nf-links a{color:#0B0C10;min-height:44px;display:inline-flex;align-items:center}
+  </style>
+</head>
+<body style="margin:0;background:#FAFAF7">
+  <div class="nf-page">
+    <div id="site-header"></div>
+
+    <main class="nf-main">
+      <div class="nf-glow"></div>
+      <div class="nf-dots"></div>
+      <div class="nf-inner">
+        <span class="nf-badge"><i></i>Error 404</span>
+        <div class="nf-code" aria-hidden="true">404</div>
+        <div class="nf-mascot" role="img" aria-label="Bainbot mascot"></div>
+        <h1 class="nf-title">This page <em>wandered off.</em></h1>
+        <p class="nf-text">The link may be broken, or the page may have moved. Let's get you back on track.</p>
+        <div class="nf-actions">
+          <a href="/" class="nf-btn">Back to home</a>
+          <a href="/contact/" class="nf-btn-alt">Contact us</a>
+        </div>
+        <div class="nf-links">
+          <a href="/product/">Product</a>
+          <a href="/solutions/">Solutions</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/guides/">Guides</a>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+  </div>
+</body>
+</html>
