@@ -1,81 +1,146 @@
-<style>
-/* Bainbot global header: desktop menu + mobile/tablet menu (all styles are in this file) */
-.bb-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;width:100%;box-sizing:border-box;background:rgba(250,250,247,0.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,12,16,0.06);font-family:'Poppins',system-ui,sans-serif;color:#0B0C10}
-.bb-header *{box-sizing:border-box}
-.bb-header a{color:inherit;text-decoration:none}
-.bb-toggle{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
-.bb-bar{max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:12px 24px}
-.bb-logo{font-size:26px;font-weight:700;letter-spacing:-0.04em;flex:none;line-height:1}
-.bb-nav{display:flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0}
-.bb-trigger{font:inherit;font-size:14px;color:#0B0C10;background:none;border:0;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-.bb-card{background:#FFFFFF;border:1px solid rgba(11,12,16,0.1);border-radius:16px;padding:8px;box-shadow:0 20px 60px rgba(11,12,16,0.14)}
-.bb-item{display:block;padding:12px 14px;border-radius:10px}
-.bb-item-title{font-size:14px;font-weight:500;color:#0B0C10}
-.bb-item-desc{font-size:13px;color:#5B606C;margin-top:2px}
-.bb-link{font-size:14px;color:#0B0C10;padding:0 14px;min-height:44px;display:inline-flex;align-items:center}
-.bb-actions{display:flex;align-items:center;gap:10px;flex:none}
-.bb-signin{font-size:14px;font-weight:500;border:1px solid rgba(11,12,16,0.18);padding:0 20px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
-.bb-cta{font-size:14px;font-weight:500;background:#0B0C10;color:#FAFAF7 !important;padding:0 20px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(11,12,16,0.2)}
-.bb-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(11,12,16,0.18);border-radius:12px;cursor:pointer;flex:none;background:#FFFFFF;-webkit-tap-highlight-color:transparent}
-.bb-close{display:none}
-.bb-toggle:checked ~ .bb-bar .bb-close{display:block}
-.bb-toggle:checked ~ .bb-bar .bb-open{display:none}
-.bb-toggle:focus-visible ~ .bb-bar .bb-burger{outline:2px solid #3F5BD9;outline-offset:2px}
-.bb-mobile{display:none;position:absolute;left:0;right:0;top:100%;background:#FAFAF7;border-bottom:1px solid rgba(11,12,16,0.1);box-shadow:0 24px 40px rgba(11,12,16,0.12);max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.bb-mobile-inner{padding:8px 20px 28px}
-.bb-group{display:block;border-top:1px solid rgba(11,12,16,0.08)}
-.bb-group summary{display:block;cursor:pointer;list-style:none}
-.bb-group summary::-webkit-details-marker{display:none}
-.bb-sum{display:flex;align-items:center;justify-content:space-between;min-height:56px;font-size:17px;font-weight:500}
-.bb-group .chev-m{width:14px;height:14px;flex:none;transition:transform .18s ease}
-.bb-group[open] .chev-m{transform:rotate(180deg)}
-.bb-sub{padding:0 0 12px;display:flex;flex-direction:column}
-.bb-sub a{font-size:16px;color:#5B606C;min-height:44px;display:flex;align-items:center;padding-left:4px}
-.bb-single{display:flex;align-items:center;min-height:56px;font-size:17px;font-weight:500;border-top:1px solid rgba(11,12,16,0.08)}
-.bb-mobile-actions{display:grid;gap:12px;margin-top:20px;border-top:1px solid rgba(11,12,16,0.08);padding-top:24px}
-.bb-m-signin{font-size:16px;font-weight:500;border:1px solid rgba(11,12,16,0.2);border-radius:999px;min-height:48px;display:flex;align-items:center;justify-content:center}
-.bb-m-cta{font-size:16px;font-weight:500;background:#0B0C10;color:#FAFAF7 !important;border-radius:999px;min-height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(11,12,16,0.2)}
-@media (max-width:1080px), (hover:none) and (pointer:coarse) and (max-width:1400px){
-  .bb-nav,.bb-actions{display:none}
-  .bb-burger{display:flex}
-  .bb-toggle:checked ~ .bb-mobile{display:block}
-  body:has(.bb-toggle:checked){overflow:hidden}
-}
-@media (max-width:640px){
-  .bb-bar{padding-left:20px;padding-right:20px}
-}
-</style>
-<header class="bb-header" onkeydown="if(event.key==='Escape'){document.getElementById('bb-menu-toggle').checked=false}">
-  <input type="checkbox" id="bb-menu-toggle" class="bb-toggle" aria-label="Toggle menu">
-  <div class="bb-bar">
-    <a href="/" class="bb-logo">Bainbot</a>
-    <nav class="bb-nav" aria-label="Main">
-      <div class="dd"><button type="button" aria-haspopup="true" class="bb-trigger">Product<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="panel"><div class="bb-card"><a href="/#team" class="bb-item"><div class="bb-item-title">Teammates</div><div class="bb-item-desc">Seven agents, one Chief of Staff</div></a><a href="/#how" class="bb-item"><div class="bb-item-title">How it works</div><div class="bb-item-desc">From goal to approved draft</div></a><a href="/#control" class="bb-item"><div class="bb-item-title">Control</div><div class="bb-item-desc">Approvals and permissions</div></a><a href="/product/#tasks" class="bb-item"><div class="bb-item-title">Tasks</div><div class="bb-item-desc">Review every draft in one place</div></a></div></div></div>
-      <div class="dd"><button type="button" aria-haspopup="true" class="bb-trigger">Solutions<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="panel"><div class="bb-card"><a href="/solutions/#ecom" class="bb-item"><div class="bb-item-title">Ecommerce outreach</div><div class="bb-item-desc">Research brands and draft outreach</div></a><a href="/solutions/#support" class="bb-item"><div class="bb-item-title">Customer support</div><div class="bb-item-desc">Sort and flag conversations</div></a><a href="/solutions/#growth" class="bb-item"><div class="bb-item-title">Growth and content</div><div class="bb-item-desc">Turn plans into publish-ready content</div></a></div></div></div>
-      <a href="/pricing/" class="bb-link">Pricing</a>
-      <div class="dd"><button type="button" aria-haspopup="true" class="bb-trigger">Research<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="panel"><div class="bb-card"><a href="/blog/" class="bb-item"><div class="bb-item-title">Blog</div><div class="bb-item-desc">Notes from the team</div></a><a href="/guides/" class="bb-item"><div class="bb-item-title">Guides</div><div class="bb-item-desc">Get more from your AI team</div></a><a href="/changelog/" class="bb-item"><div class="bb-item-title">Changelog</div><div class="bb-item-desc">What is new in Bainbot</div></a></div></div></div>
-      <div class="dd"><button type="button" aria-haspopup="true" class="bb-trigger">Company<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="panel"><div class="bb-card"><a href="/about/" class="bb-item"><div class="bb-item-title">About</div><div class="bb-item-desc">Why we built Bainbot</div></a><a href="/careers/" class="bb-item"><div class="bb-item-title">Careers</div><div class="bb-item-desc">Join the team</div></a><a href="/contact/" class="bb-item"><div class="bb-item-title">Contact</div><div class="bb-item-desc">Talk to us</div></a></div></div></div>
-    </nav>
-    <div class="bb-actions">
-      <a href="/signin/" class="bb-signin">Sign in</a>
-      <a href="/signin/" class="bb-cta">Start building<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<header class="header-1">
+    <div class="div-2">
+        <a href="/" class="a-1">Bainbot</a>
+        <nav class="nav-1">
+            <div class="dd">
+                <button type="button" aria-haspopup="true" class="button-1">
+                    Product<svg
+                        class="chev"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#0B0C10"
+                        stroke-width="2.2"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="panel">
+                    <div class="div-3">
+                        <a href="/#team" class="a-2"
+                            ><div class="div-4">Teammates</div>
+                            <div class="div-5">Seven agents, one Chief of Staff</div></a
+                        ><a href="/#how" class="a-2"
+                            ><div class="div-4">How it works</div>
+                            <div class="div-5">From goal to approved draft</div></a
+                        ><a href="/#control" class="a-2"
+                            ><div class="div-4">Control</div>
+                            <div class="div-5">Approvals and permissions</div></a
+                        ><a href="/product/#tasks" class="a-2"
+                            ><div class="div-4">Tasks</div>
+                            <div class="div-5">Review every draft in one place</div></a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="dd">
+                <button type="button" aria-haspopup="true" class="button-1">
+                    Solutions<svg
+                        class="chev"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#0B0C10"
+                        stroke-width="2.2"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="panel">
+                    <div class="div-3">
+                        <a href="/solutions/#ecom" class="a-2"
+                            ><div class="div-4">Ecommerce outreach</div>
+                            <div class="div-5">Research brands and draft outreach</div></a
+                        ><a href="/solutions/#support" class="a-2"
+                            ><div class="div-4">Customer support</div>
+                            <div class="div-5">Sort and flag conversations</div></a
+                        ><a href="/solutions/#growth" class="a-2"
+                            ><div class="div-4">Growth and content</div>
+                            <div class="div-5">Turn plans into publish-ready content</div></a
+                        >
+                    </div>
+                </div>
+            </div>
+            <a href="/pricing/" class="a-3">Pricing</a>
+            <div class="dd">
+                <button type="button" aria-haspopup="true" class="button-1">
+                    Research<svg
+                        class="chev"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#0B0C10"
+                        stroke-width="2.2"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="panel">
+                    <div class="div-3">
+                        <a href="/blog/" class="a-2"
+                            ><div class="div-4">Blog</div>
+                            <div class="div-5">Notes from the team</div></a
+                        ><a href="/guides/" class="a-2"
+                            ><div class="div-4">Guides</div>
+                            <div class="div-5">Get more from your AI team</div></a
+                        ><a href="/changelog/" class="a-2"
+                            ><div class="div-4">Changelog</div>
+                            <div class="div-5">What is new in Bainbot</div></a
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="dd">
+                <button type="button" aria-haspopup="true" class="button-1">
+                    Company<svg
+                        class="chev"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#0B0C10"
+                        stroke-width="2.2"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="panel">
+                    <div class="div-3">
+                        <a href="/about/" class="a-2"
+                            ><div class="div-4">About</div>
+                            <div class="div-5">Why we built Bainbot</div></a
+                        ><a href="/careers/" class="a-2"
+                            ><div class="div-4">Careers</div>
+                            <div class="div-5">Join the team</div></a
+                        ><a href="/contact/" class="a-2"
+                            ><div class="div-4">Contact</div>
+                            <div class="div-5">Talk to us</div></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="div-6">
+            <a href="/signin/" class="a-4">Sign in</a
+            ><a href="/signin/" class="a-5"
+                >Start building<svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#FAFAF7"
+                    stroke-width="2"
+                    aria-hidden="true"
+                >
+                    <path d="M5 12h14M13 6l6 6-6 6"></path></svg
+            ></a>
+        </div>
     </div>
-    <label for="bb-menu-toggle" class="bb-burger" aria-hidden="true">
-      <svg class="bb-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      <svg class="bb-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </label>
-  </div>
-  <div class="bb-mobile">
-    <div class="bb-mobile-inner">
-      <details class="bb-group"><summary><span class="bb-sum">Product<svg class="chev-m" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="bb-sub"><a href="/#team" onclick="document.getElementById('bb-menu-toggle').checked=false">Teammates</a><a href="/#how" onclick="document.getElementById('bb-menu-toggle').checked=false">How it works</a><a href="/#control" onclick="document.getElementById('bb-menu-toggle').checked=false">Control</a><a href="/product/#tasks" onclick="document.getElementById('bb-menu-toggle').checked=false">Tasks</a></div></details>
-      <details class="bb-group"><summary><span class="bb-sum">Solutions<svg class="chev-m" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="bb-sub"><a href="/solutions/#ecom" onclick="document.getElementById('bb-menu-toggle').checked=false">Ecommerce outreach</a><a href="/solutions/#support" onclick="document.getElementById('bb-menu-toggle').checked=false">Customer support</a><a href="/solutions/#growth" onclick="document.getElementById('bb-menu-toggle').checked=false">Growth and content</a></div></details>
-      <a href="/pricing/" class="bb-single">Pricing</a>
-      <details class="bb-group"><summary><span class="bb-sum">Research<svg class="chev-m" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="bb-sub"><a href="/blog/" onclick="document.getElementById('bb-menu-toggle').checked=false">Blog</a><a href="/guides/" onclick="document.getElementById('bb-menu-toggle').checked=false">Guides</a><a href="/changelog/" onclick="document.getElementById('bb-menu-toggle').checked=false">Changelog</a></div></details>
-      <details class="bb-group"><summary><span class="bb-sum">Company<svg class="chev-m" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="bb-sub"><a href="/about/" onclick="document.getElementById('bb-menu-toggle').checked=false">About</a><a href="/careers/" onclick="document.getElementById('bb-menu-toggle').checked=false">Careers</a><a href="/contact/" onclick="document.getElementById('bb-menu-toggle').checked=false">Contact</a></div></details>
-      <div class="bb-mobile-actions">
-        <a href="/signin/" class="bb-m-signin">Sign in</a>
-        <a href="/signin/" class="bb-m-cta">Start building</a>
-      </div>
-    </div>
-  </div>
 </header>
