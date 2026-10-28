@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrations | Bainbot</title>
+<meta name="description" content="Connect the tools you already use. You choose what your AI teammates can see and do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+/* Styles for this page (class names start with np- so they never clash with styles.css) */
+summary{list-style:none}
+.np-a-3{background:#FAFAF7;color:#0B0C10;font-size:15px;font-weight:500;padding:14px 32px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-a-4{color:#FAFAF7;border:1px solid rgba(250,250,247,0.3);font-size:15px;padding:14px 32px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-a-5{font-size:14px;font-weight:500;color:#3F5BD9;display:inline-flex;align-items:center;min-height:32px}
+.np-button-1{font:inherit;font-size:15px;font-weight:500;background:#0B0C10;color:#FAFAF7;border:0;border-radius:999px;min-height:48px;padding:0 28px;cursor:pointer}
+.np-div-1{width:100%;box-sizing:border-box;background:#FAFAF7;color:#0B0C10;font-family:'Poppins',system-ui,sans-serif;overflow-x:clip}
+.np-div-11{font-size:13px;color:#5B606C}
+.np-div-14{display:flex;flex-direction:column;gap:16px;margin-bottom:56px;max-width:720px}
+.np-div-17{width:48px;height:48px;border-radius:14px;background:rgba(63,91,217,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:auto}
+.np-div-34{position:relative;overflow:hidden;background:#0B0C10;color:#FAFAF7;border-radius:32px;padding:104px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.np-div-35{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(250,250,247,0.3) 1px,transparent 1.6px);background-size:16px 16px;-webkit-mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);pointer-events:none}
+.np-div-36{position:relative;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.np-div-39{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.np-div-55{font-size:15px}
+.np-div-60{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:40px}
+.np-div-61{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(11,12,16,0.14)}
+.np-div-70{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.np-div-71{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:28px;display:flex;flex-direction:column;gap:14px;min-height:230px}
+.np-div-72{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:clamp(28px,5vw,56px);display:flex;gap:56px;flex-wrap:wrap;align-items:center}
+.np-div-73{flex:1 1 320px;display:flex;flex-direction:column;gap:20px}
+.np-div-74{flex:1 1 320px;background:#FAFAF7;border:1px solid rgba(11,12,16,0.1);border-radius:20px;padding:8px 24px}
+.np-div-75{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(11,12,16,0.1)}
+.np-div-76{position:relative;width:38px;height:22px;border-radius:999px;background:#0B0C10;flex:none}
+.np-div-77{position:absolute;top:2px;left:18px;width:18px;height:18px;border-radius:50%;background:#FFFFFF}
+.np-div-78{position:relative;width:38px;height:22px;border-radius:999px;background:rgba(11,12,16,0.18);flex:none}
+.np-div-79{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#FFFFFF}
+.np-div-80{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:clamp(28px,5vw,56px);display:flex;gap:40px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.np-div-81{flex:1 1 320px}
+.np-div-82{flex:1 1 360px;display:flex;gap:10px;flex-wrap:wrap}
+.np-h1-2{margin:0;max-width:860px;font-size:clamp(32px,5vw,60px);line-height:1.06;font-weight:300;letter-spacing:-0.04em}
+.np-h2-1{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-0.035em}
+.np-h2-3{position:relative;margin:0;font-size:clamp(30px,4.4vw,56px);line-height:1.05;font-weight:300;letter-spacing:-0.04em}
+.np-h3-7{margin:0;font-size:24px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-8{margin:0 0 6px;font-size:20px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-9{margin:0 0 8px;font-size:28px;font-weight:300;letter-spacing:-0.03em}
+.np-input-1{flex:1 1 220px;min-width:0;box-sizing:border-box;height:48px;border:1px solid rgba(11,12,16,0.18);border-radius:999px;padding:0 20px;font:inherit;font-size:15px;background:#FAFAF7;color:#0B0C10}
+.np-p-2{margin:0;font-size:15px;line-height:1.6;color:#5B606C}
+.np-p-6{position:relative;margin:0;max-width:440px;font-size:17px;line-height:1.6;color:#B4B8C2}
+.np-p-7{margin:0;max-width:540px;font-size:18px;line-height:1.6;color:#5B606C}
+.np-p-8{margin:0;font-size:15px;line-height:1.55;color:#5B606C}
+.np-p-9{margin:0;font-size:17px;line-height:1.6;color:#5B606C;max-width:440px}
+.np-p-10{margin:0;font-size:16px;line-height:1.6;color:#5B606C}
+.np-section-2{max-width:1200px;margin:0 auto;padding:120px 32px 0;box-sizing:border-box}
+.np-section-3{max-width:1200px;margin:0 auto;padding:140px 32px 120px;box-sizing:border-box}
+.np-section-4{max-width:1200px;margin:0 auto;padding:80px 32px 0;box-sizing:border-box;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.np-section-6{max-width:1200px;margin:0 auto;padding:56px 32px 0;box-sizing:border-box}
+.np-section-7{max-width:1200px;margin:0 auto;padding:100px 32px 0;box-sizing:border-box}
+.np-span-1{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;border:1px solid rgba(11,12,16,0.12);padding:8px 16px;border-radius:999px;background:#FFFFFF}
+.np-span-2{width:6px;height:6px;border-radius:50%;background:#3F5BD9;display:inline-block;margin-right:10px}
+.np-span-4{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;display:flex;align-items:center;gap:10px}
+.np-span-5{width:6px;height:6px;border-radius:50%;background:#3F5BD9;flex:none}
+.np-span-6{font-style:italic;font-weight:300}
+.np-span-10{font-size:14px;color:#3F5BD9;letter-spacing:0.08em}
+.np-span-14{border:1px solid #0B0C10;border-radius:999px;padding:0 20px;min-height:44px;display:inline-flex;align-items:center;font-size:14px;background:#0B0C10;color:#FAFAF7}
+.np-span-15{border:1px solid rgba(11,12,16,0.14);border-radius:999px;padding:0 20px;min-height:44px;display:inline-flex;align-items:center;font-size:14px;background:#FFFFFF}
+</style>
+<script src="../js/global.js" defer></script>
+</head>
+<body>
+<div class="np-div-1">
+<div id="site-header"></div>
+<section class="np-section-4"><span class="np-span-1"><span class="np-span-2"></span>Integrations</span><h1 class="np-h1-2">Connect the tools <span class="np-span-6">you already use.</span></h1><p class="np-p-7">Your AI teammates work where you work. You choose what they can see and do.</p><div class="np-div-70"><span class="np-span-14">All</span><span class="np-span-15">Email</span><span class="np-span-15">Calendar</span><span class="np-span-15">CRM</span><span class="np-span-15">Analytics</span><span class="np-span-15">Docs</span><span class="np-span-15">Chat</span></div></section>
+<section id="all" class="np-section-6"><div class="np-div-39"><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></div><div><h3 class="np-h3-8">Email</h3><p class="np-p-8">Read, draft and send with your approval.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><div><h3 class="np-h3-8">Calendar</h3><p class="np-p-8">Find time and schedule meetings.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.5"/><path d="M3 20c.8-3.5 3-5 6-5s5.2 1.5 6 5M16 6.5a3 3 0 010 5.5M18 15c1.8.6 2.8 2.2 3 5"/></svg></div><div><h3 class="np-h3-8">CRM</h3><p class="np-p-8">Keep contacts and deals up to date.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></div><div><h3 class="np-h3-8">Analytics</h3><p class="np-p-8">Turn your numbers into answers.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></div><div><h3 class="np-h3-8">Documents</h3><p class="np-p-8">Read and draft in your docs.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></div><div><h3 class="np-h3-8">Team chat</h3><p class="np-p-8">Get updates where your team talks.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 010-8 5 5 0 019.6 1.2A3.4 3.4 0 0117 18z"/></svg></div><div><h3 class="np-h3-8">Cloud storage</h3><p class="np-p-8">Find the files your team needs.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 10h16M10 5v14"/></svg></div><div><h3 class="np-h3-8">Spreadsheets</h3><p class="np-p-8">Read tables and build reports.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l2-8h12l2 8v6H4zM4 13h5l1 2h4l1-2h5"/></svg></div><div><h3 class="np-h3-8">Support inbox</h3><p class="np-p-8">Triage tickets and conversations.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 11h18"/></svg></div><div><h3 class="np-h3-8">Payments</h3><p class="np-p-8">Check invoices and payment status.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 5v14M15 5v14"/></svg></div><div><h3 class="np-h3-8">Project tracking</h3><p class="np-p-8">Keep tasks and boards in sync.</p></div><a href="#" class="np-a-5">Connect</a></div><div class="np-div-71"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg></div><div><h3 class="np-h3-8">Code repository</h3><p class="np-p-8">Review changes and pull requests.</p></div><a href="#" class="np-a-5">Connect</a></div></div></section>
+<section id="how" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>How connections work</span><h2 class="np-h2-1">Three steps, <span class="np-span-6">full control.</span></h2></div><div class="np-div-60"><div class="np-div-61"><span class="np-span-10">01</span><h3 class="np-h3-7">Connect</h3><p class="np-p-2">Pick a tool and sign in securely.</p></div><div class="np-div-61"><span class="np-span-10">02</span><h3 class="np-h3-7">Choose access</h3><p class="np-p-2">Read only, draft, or send with approval.</p></div><div class="np-div-61"><span class="np-span-10">03</span><h3 class="np-h3-7">Review activity</h3><p class="np-p-2">See what every teammate did and when.</p></div></div></section>
+<section id="permissions" class="np-section-2"><div class="np-div-72"><div class="np-div-73"><h2 class="np-h2-1">You choose what teammates <span class="np-span-6">can see and do.</span></h2><p class="np-p-9">Every connection has its own permissions. Anything that leaves your business waits for your approval.</p></div><div class="np-div-74"><div class="np-div-75"><div><div class="np-div-55">Read email</div><div class="np-div-11">Briefings and research</div></div><div class="np-div-76"><div class="np-div-77"></div></div></div><div class="np-div-75"><div><div class="np-div-55">Draft replies</div><div class="np-div-11">Sales Outreach</div></div><div class="np-div-76"><div class="np-div-77"></div></div></div><div class="np-div-75"><div><div class="np-div-55">Read analytics</div><div class="np-div-11">Analyst</div></div><div class="np-div-76"><div class="np-div-77"></div></div></div><div class="np-div-75"><div><div class="np-div-55">Send emails</div><div class="np-div-11">Only after you approve</div></div><div class="np-div-78"><div class="np-div-79"></div></div></div></div></div></section>
+<section id="request" class="np-section-7"><div class="np-div-80"><div class="np-div-81"><h3 class="np-h3-9">Do not see your tool?</h3><p class="np-p-10">Tell us what you use and we will look at adding it.</p></div><div class="np-div-82"><input type="text" placeholder="Which tool do you need?" aria-label="Which tool do you need?" class="np-input-1"><button type="button" class="np-button-1">Request integration</button></div></div></section>
+<section id="start" class="np-section-3"><div class="np-div-34"><div class="np-div-35"></div><h2 class="np-h2-3">Ready to build <span class="np-span-6">your team?</span></h2><p class="np-p-6">Start with one Chief of Staff. Add teammates as you grow.</p><div class="np-div-36"><a href="../signin/" class="np-a-3">Start building</a><a href="../contact/" class="np-a-4">Talk to us</a></div></div></section>
+<div id="site-footer"></div>
+</div>
+</body>
+</html>
