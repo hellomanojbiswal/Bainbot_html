@@ -1,96 +1,843 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Miki | Bainbot</title>
-<meta name="description" content="Meet Miki, your free AI personal assistant.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
-<style>
-/* Styles for this page (class names start with np- so they never clash with styles.css) */
-summary{list-style:none}
-.np-a-1{background:#0B0C10;color:#FAFAF7;font-weight:500;box-shadow:0 8px 24px rgba(11,12,16,0.2);font-size:15px;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
-.np-a-2{color:#0B0C10;border:1px solid rgba(11,12,16,0.18);font-size:15px;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
-.np-a-3{background:#FAFAF7;color:#0B0C10;font-size:15px;font-weight:500;padding:14px 32px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
-.np-details-1{border-top:1px solid rgba(11,12,16,0.1);padding:24px 0}
-.np-div-1{width:100%;box-sizing:border-box;background:#FAFAF7;color:#0B0C10;font-family:'Poppins',system-ui,sans-serif;overflow-x:clip}
-.np-div-2{position:absolute;top:-40px;left:50%;width:min(900px,120%);height:520px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0%,rgba(63,91,217,0.16),transparent 65%);pointer-events:none}
-.np-div-3{position:absolute;top:0;left:50%;width:min(1100px,140%);height:700px;transform:translateX(-50%);background-image:radial-gradient(circle,rgba(11,12,16,0.3) 1px,transparent 1.6px);background-size:16px 16px;-webkit-mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 58%);mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 58%);pointer-events:none}
-.np-div-4{position:relative;display:flex;gap:56px;flex-wrap:wrap;align-items:center}
-.np-div-5{flex:1 1 420px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
-.np-div-6{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-.np-div-7{flex:1 1 380px}
-.np-div-8{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:28px;display:flex;flex-direction:column;gap:16px}
-.np-div-9{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid rgba(11,12,16,0.1)}
-.np-div-10{font-size:18px;font-weight:500}
-.np-div-11{font-size:13px;color:#5B606C}
-.np-div-12{margin-left:auto;max-width:88%;background:#DCE5FF;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.5}
-.np-div-13{max-width:88%;background:#EEEFF3;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.5}
-.np-div-14{display:flex;flex-direction:column;gap:16px;margin-bottom:56px;max-width:720px}
-.np-div-15{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
-.np-div-16{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:220px;justify-content:flex-end}
-.np-div-17{width:48px;height:48px;border-radius:14px;background:rgba(63,91,217,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:auto}
-.np-div-18{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}
-.np-div-19{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:200px;justify-content:flex-end}
-.np-div-20{border-bottom:1px solid rgba(11,12,16,0.1);max-width:860px}
-.np-div-21{display:flex;gap:20px;align-items:center;padding:20px 0;border-top:1px solid rgba(11,12,16,0.1);flex-wrap:wrap}
-.np-div-22{flex:1 1 240px}
-.np-div-23{font-size:17px;font-weight:500}
-.np-div-24{font-size:15px;color:#5B606C;margin-top:2px}
-.np-div-25{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:180px;justify-content:flex-end}
-.np-div-26{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:20px}
-.np-div-27{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:20px;justify-content:center}
-.np-div-28{background:#0B0C10;color:#FAFAF7;border-radius:24px;padding:clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:20px;justify-content:center}
-.np-div-29{display:flex;padding-left:14px}
-.np-div-30{width:48px;height:48px;flex:none;border-radius:12px;box-sizing:border-box;border:3px solid #0B0C10;margin-left:-14px;background-image:url(../assets/agents.png);background-size:336px 48px;background-position:-0px 0;background-color:#fff}
-.np-div-31{width:48px;height:48px;flex:none;border-radius:12px;box-sizing:border-box;border:3px solid #0B0C10;margin-left:-14px;background-image:url(../assets/agents.png);background-size:336px 48px;background-position:-96px 0;background-color:#fff}
-.np-div-32{width:48px;height:48px;flex:none;border-radius:12px;box-sizing:border-box;border:3px solid #0B0C10;margin-left:-14px;background-image:url(../assets/agents.png);background-size:336px 48px;background-position:-144px 0;background-color:#fff}
-.np-div-33{width:48px;height:48px;flex:none;border-radius:12px;box-sizing:border-box;border:3px solid #0B0C10;margin-left:-14px;background-image:url(../assets/agents.png);background-size:336px 48px;background-position:-192px 0;background-color:#fff}
-.np-div-34{position:relative;overflow:hidden;background:#0B0C10;color:#FAFAF7;border-radius:32px;padding:104px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
-.np-div-35{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(250,250,247,0.3) 1px,transparent 1.6px);background-size:16px 16px;-webkit-mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);pointer-events:none}
-.np-div-36{position:relative;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.np-h1-1{margin:0;font-size:clamp(36px,5.6vw,72px);line-height:1.04;font-weight:300;letter-spacing:-0.04em}
-.np-h2-1{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-0.035em}
-.np-h2-2{margin:0;font-size:clamp(30px,4vw,48px);line-height:1.08;font-weight:300;letter-spacing:-0.035em}
-.np-h2-3{position:relative;margin:0;font-size:clamp(30px,4.4vw,56px);line-height:1.05;font-weight:300;letter-spacing:-0.04em}
-.np-h3-1{margin:0;font-size:22px;font-weight:500;letter-spacing:-0.02em}
-.np-h3-2{margin:0;font-size:28px;font-weight:300;letter-spacing:-0.03em}
-.np-img-1{display:block;width:56px;height:56px;flex:none;border-radius:14px}
-.np-img-2{display:block;width:44px;height:44px;flex:none;border-radius:11px}
-.np-p-1{margin:0;max-width:500px;font-size:19px;line-height:1.6;color:#5B606C}
-.np-p-2{margin:0;font-size:15px;line-height:1.6;color:#5B606C}
-.np-p-3{margin:0;font-size:17px;line-height:1.6;color:#5B606C}
-.np-p-4{margin:0;font-size:16px;line-height:1.6;color:#B4B8C2}
-.np-p-5{margin:12px 0 0;font-size:16px;line-height:1.6;color:#5B606C;max-width:640px}
-.np-p-6{position:relative;margin:0;max-width:440px;font-size:17px;line-height:1.6;color:#B4B8C2}
-.np-section-1{position:relative;max-width:1200px;margin:0 auto;padding:80px 32px 0;box-sizing:border-box}
-.np-section-2{max-width:1200px;margin:0 auto;padding:120px 32px 0;box-sizing:border-box}
-.np-section-3{max-width:1200px;margin:0 auto;padding:140px 32px 120px;box-sizing:border-box}
-.np-span-1{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;border:1px solid rgba(11,12,16,0.12);padding:8px 16px;border-radius:999px;background:#FFFFFF}
-.np-span-2{width:6px;height:6px;border-radius:50%;background:#3F5BD9;display:inline-block;margin-right:10px}
-.np-span-3{font-style:italic;padding-right:0.06em;background:linear-gradient(90deg,#0B0C10,#3F5BD9);-webkit-background-clip:text;background-clip:text;color:transparent}
-.np-span-4{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;display:flex;align-items:center;gap:10px}
-.np-span-5{width:6px;height:6px;border-radius:50%;background:#3F5BD9;flex:none}
-.np-span-6{font-style:italic;font-weight:300}
-.np-span-7{width:64px;font-size:14px;color:#5B606C}
-.np-summary-1{cursor:pointer;font-size:20px;letter-spacing:-0.01em;min-height:44px;display:flex;align-items:center}
-</style>
-<script src="../js/global.js" defer></script>
-</head>
-<body>
-<div class="np-div-1">
-<div id="site-header"></div>
-<section class="np-section-1"><div class="np-div-2"></div><div class="np-div-3"></div><div class="np-div-4"><div class="np-div-5"><span class="np-span-1"><span class="np-span-2"></span>Miki</span><h1 class="np-h1-1">Your personal AI assistant, <span class="np-span-3">free for everyone.</span></h1><p class="np-p-1">Miki helps with homework, plans, writing and everyday life. Ask anything, any time.</p><div class="np-div-6"><a href="../signin/" class="np-a-1">Start with Miki</a><a href="#can" class="np-a-2">See what Miki can do</a></div></div><div class="np-div-7"><div class="np-div-8"><div class="np-div-9"><img src="../assets/miki.png" alt="Miki" width="56" height="56" class="np-img-1"><div><div class="np-div-10">Miki</div><div class="np-div-11">Your personal assistant</div></div></div><div class="np-div-12">Can you plan my week? I have a maths test on Friday.</div><div class="np-div-13">Of course! Let us put revision on Tuesday and Thursday and keep Wednesday free. Want me to add reminders?</div><div class="np-div-12">Yes please</div><div class="np-div-13">Done. I will remind you the evening before each session.</div></div></div></div></section>
-<section id="can" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>What Miki can do</span><h2 class="np-h2-1">One assistant. <span class="np-span-6">Lots of little helps.</span></h2></div><div class="np-div-15"><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3 class="np-h3-1">Plan your day</h3><p class="np-p-2">Turn a busy list into a calm plan.</p></div><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg></div><h3 class="np-h3-1">Write and edit</h3><p class="np-p-2">Emails, essays and messages, polished.</p></div><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h10"/></svg></div><h3 class="np-h3-1">Learn and explain</h3><p class="np-p-2">Hard topics, explained step by step.</p></div><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg></div><h3 class="np-h3-1">Research</h3><p class="np-p-2">Quick, clear answers to your questions.</p></div><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7l2 2 3-3M5 15l2 2 3-3M13 8h6M13 16h6"/></svg></div><h3 class="np-h3-1">Stay organized</h3><p class="np-p-2">Reminders, to-dos and notes in one place.</p></div><div class="np-div-16"><div class="np-div-17"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F5BD9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><h3 class="np-h3-1">Get creative</h3><p class="np-p-2">Stories, names, gift ideas and more.</p></div></div></section>
-<section id="who" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Miki for everyone</span><h2 class="np-h2-1">From kids to <span class="np-span-6">busy professionals.</span></h2></div><div class="np-div-18"><div class="np-div-19"><h3 class="np-h3-1">Kids</h3><p class="np-p-2">Friendly help with homework and curious questions.</p></div><div class="np-div-19"><h3 class="np-h3-1">Students</h3><p class="np-p-2">Study plans, summaries and practice questions.</p></div><div class="np-div-19"><h3 class="np-h3-1">Parents</h3><p class="np-p-2">Meal plans, schedules and family organizing.</p></div><div class="np-div-19"><h3 class="np-h3-1">Professionals</h3><p class="np-p-2">Drafts, research and a calmer inbox.</p></div></div></section>
-<section id="day" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>A day with Miki</span><h2 class="np-h2-1">Helpful from <span class="np-span-6">morning to night.</span></h2></div><div class="np-div-20"><div class="np-div-21"><span class="np-span-7">7:30</span><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2"><div class="np-div-22"><div class="np-div-23">Morning plan</div><div class="np-div-24">Your day laid out, with time for what matters.</div></div></div><div class="np-div-21"><span class="np-span-7">12:30</span><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2"><div class="np-div-22"><div class="np-div-23">Quick research</div><div class="np-div-24">A fast answer, explained simply.</div></div></div><div class="np-div-21"><span class="np-span-7">16:00</span><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2"><div class="np-div-22"><div class="np-div-23">Homework help</div><div class="np-div-24">Step-by-step help, not just the answer.</div></div></div><div class="np-div-21"><span class="np-span-7">21:00</span><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2"><div class="np-div-22"><div class="np-div-23">Tomorrow, sorted</div><div class="np-div-24">Reminders set and everything ready.</div></div></div></div></section>
-<section id="control" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Your control</span><h2 class="np-h2-1">Miki suggests. <span class="np-span-6">You decide.</span></h2></div><div class="np-div-15"><div class="np-div-25"><h3 class="np-h3-1">You decide</h3><p class="np-p-2">Miki offers ideas and drafts. You choose what to use.</p></div><div class="np-div-25"><h3 class="np-h3-1">Your privacy</h3><p class="np-p-2">[Add your privacy promise here.]</p></div><div class="np-div-25"><h3 class="np-h3-1">Made for younger users too</h3><p class="np-p-2">[Add details about safety for younger users.]</p></div></div></section>
-<section id="free" class="np-section-2"><div class="np-div-26"><div class="np-div-27"><h2 class="np-h2-2">Miki is <span class="np-span-6">free for everyone.</span></h2><p class="np-p-3">No tiers to compare. Just say hello.</p><div><a href="../signin/" class="np-a-1">Start with Miki</a></div></div><div class="np-div-28"><div class="np-div-29"><div class="np-div-30"></div><div class="np-div-31"></div><div class="np-div-32"></div><div class="np-div-33"></div></div><h3 class="np-h3-2">Need more than an assistant?</h3><p class="np-p-4">AI Teammate brings a team of agents to your business.</p><div><a href="../ai-teammate/" class="np-a-3">See AI Teammate</a></div></div></div></section>
-<section id="faq" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>FAQ</span><h2 class="np-h2-1">Quick <span class="np-span-6">answers.</span></h2></div><div class="np-div-20"><details class="np-details-1"><summary class="np-summary-1">Is Miki really free?</summary><p class="np-p-5">Yes. Miki is free for everyone.</p></details><details class="np-details-1"><summary class="np-summary-1">Who can use Miki?</summary><p class="np-p-5">Anyone, from kids to professionals.</p></details><details class="np-details-1"><summary class="np-summary-1">Is Miki safe for kids?</summary><p class="np-p-5">[Add your answer about safety for younger users.]</p></details><details class="np-details-1"><summary class="np-summary-1">Can I use Miki for my business?</summary><p class="np-p-5">Miki is made for personal use. For business, see AI Teammate.</p></details></div></section>
-<section id="start" class="np-section-3"><div class="np-div-34"><div class="np-div-35"></div><h2 class="np-h2-3">Say hello to <span class="np-span-6">Miki.</span></h2><p class="np-p-6">Free for everyone.</p><div class="np-div-36"><a href="../signin/" class="np-a-3">Start with Miki</a></div></div></section>
-<div id="site-footer"></div>
-</div>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Miki | Bainbot</title>
+        <meta name="description" content="Meet Miki, your free AI personal assistant." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <style>
+            /* Styles for this page (class names start with np- so they never clash with styles.css) */
+            summary {
+                list-style: none;
+            }
+            .np-a-1 {
+                background: #0b0c10;
+                color: #fafaf7;
+                font-weight: 500;
+                box-shadow: 0 8px 24px rgba(11, 12, 16, 0.2);
+                font-size: 15px;
+                padding: 14px 28px;
+                border-radius: 999px;
+                min-height: 44px;
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+            }
+            .np-a-2 {
+                color: #0b0c10;
+                border: 1px solid rgba(11, 12, 16, 0.18);
+                font-size: 15px;
+                padding: 14px 28px;
+                border-radius: 999px;
+                min-height: 44px;
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+            }
+            .np-a-3 {
+                background: #fafaf7;
+                color: #0b0c10;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 14px 32px;
+                border-radius: 999px;
+                min-height: 44px;
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+            }
+            .np-details-1 {
+                border-top: 1px solid rgba(11, 12, 16, 0.1);
+                padding: 24px 0;
+            }
+            .np-div-1 {
+                width: 100%;
+                box-sizing: border-box;
+                background: #fafaf7;
+                color: #0b0c10;
+                font-family: "Poppins", system-ui, sans-serif;
+                overflow-x: clip;
+            }
+            .np-div-2 {
+                position: absolute;
+                top: -40px;
+                left: 50%;
+                width: min(900px, 120%);
+                height: 520px;
+                transform: translateX(-50%);
+                background: radial-gradient(ellipse at 50% 0%, rgba(63, 91, 217, 0.16), transparent 65%);
+                pointer-events: none;
+            }
+            .np-div-3 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: min(1100px, 140%);
+                height: 700px;
+                transform: translateX(-50%);
+                background-image: radial-gradient(circle, rgba(11, 12, 16, 0.3) 1px, transparent 1.6px);
+                background-size: 16px 16px;
+                -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 58%);
+                mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 58%);
+                pointer-events: none;
+            }
+            .np-div-4 {
+                position: relative;
+                display: flex;
+                gap: 56px;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .np-div-5 {
+                flex: 1 1 420px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                align-items: flex-start;
+            }
+            .np-div-6 {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin-top: 8px;
+            }
+            .np-div-7 {
+                flex: 1 1 380px;
+            }
+            .np-div-8 {
+                background: #ffffff;
+                border: 1px solid rgba(11, 12, 16, 0.08);
+                border-radius: 24px;
+                box-shadow:
+                    0 1px 2px rgba(11, 12, 16, 0.04),
+                    0 16px 40px rgba(11, 12, 16, 0.05);
+                padding: 28px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .np-div-9 {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid rgba(11, 12, 16, 0.1);
+            }
+            .np-div-10 {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .np-div-11 {
+                font-size: 13px;
+                color: #5b606c;
+            }
+            .np-div-12 {
+                margin-left: auto;
+                max-width: 88%;
+                background: #dce5ff;
+                border-radius: 18px;
+                padding: 12px 16px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .np-div-13 {
+                max-width: 88%;
+                background: #eeeff3;
+                border-radius: 18px;
+                padding: 12px 16px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .np-div-14 {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 56px;
+                max-width: 720px;
+            }
+            .np-div-15 {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+                gap: 20px;
+            }
+            .np-div-16 {
+                background: #ffffff;
+                border: 1px solid rgba(11, 12, 16, 0.08);
+                border-radius: 24px;
+                box-shadow:
+                    0 1px 2px rgba(11, 12, 16, 0.04),
+                    0 16px 40px rgba(11, 12, 16, 0.05);
+                padding: 36px 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-height: 220px;
+                justify-content: flex-end;
+            }
+            .np-div-17 {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+                background: rgba(63, 91, 217, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: auto;
+            }
+            .np-div-18 {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+                gap: 20px;
+            }
+            .np-div-19 {
+                background: #ffffff;
+                border: 1px solid rgba(11, 12, 16, 0.08);
+                border-radius: 24px;
+                box-shadow:
+                    0 1px 2px rgba(11, 12, 16, 0.04),
+                    0 16px 40px rgba(11, 12, 16, 0.05);
+                padding: 36px 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-height: 200px;
+                justify-content: flex-end;
+            }
+            .np-div-20 {
+                border-bottom: 1px solid rgba(11, 12, 16, 0.1);
+                max-width: 860px;
+            }
+            .np-div-21 {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                padding: 20px 0;
+                border-top: 1px solid rgba(11, 12, 16, 0.1);
+                flex-wrap: wrap;
+            }
+            .np-div-22 {
+                flex: 1 1 240px;
+            }
+            .np-div-23 {
+                font-size: 17px;
+                font-weight: 500;
+            }
+            .np-div-24 {
+                font-size: 15px;
+                color: #5b606c;
+                margin-top: 2px;
+            }
+            .np-div-25 {
+                background: #ffffff;
+                border: 1px solid rgba(11, 12, 16, 0.08);
+                border-radius: 24px;
+                box-shadow:
+                    0 1px 2px rgba(11, 12, 16, 0.04),
+                    0 16px 40px rgba(11, 12, 16, 0.05);
+                padding: 36px 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-height: 180px;
+                justify-content: flex-end;
+            }
+            .np-div-26 {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+                gap: 20px;
+            }
+            .np-div-27 {
+                background: #ffffff;
+                border: 1px solid rgba(11, 12, 16, 0.08);
+                border-radius: 24px;
+                box-shadow:
+                    0 1px 2px rgba(11, 12, 16, 0.04),
+                    0 16px 40px rgba(11, 12, 16, 0.05);
+                padding: clamp(32px, 5vw, 56px);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+            }
+            .np-div-28 {
+                background: #0b0c10;
+                color: #fafaf7;
+                border-radius: 24px;
+                padding: clamp(32px, 5vw, 56px);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+            }
+            .np-div-29 {
+                display: flex;
+                padding-left: 14px;
+            }
+            .np-div-30 {
+                width: 48px;
+                height: 48px;
+                flex: none;
+                border-radius: 12px;
+                box-sizing: border-box;
+                border: 3px solid #0b0c10;
+                margin-left: -14px;
+                background-image: url(../assets/agents.png);
+                background-size: 336px 48px;
+                background-position: -0px 0;
+                background-color: #fff;
+            }
+            .np-div-31 {
+                width: 48px;
+                height: 48px;
+                flex: none;
+                border-radius: 12px;
+                box-sizing: border-box;
+                border: 3px solid #0b0c10;
+                margin-left: -14px;
+                background-image: url(../assets/agents.png);
+                background-size: 336px 48px;
+                background-position: -96px 0;
+                background-color: #fff;
+            }
+            .np-div-32 {
+                width: 48px;
+                height: 48px;
+                flex: none;
+                border-radius: 12px;
+                box-sizing: border-box;
+                border: 3px solid #0b0c10;
+                margin-left: -14px;
+                background-image: url(../assets/agents.png);
+                background-size: 336px 48px;
+                background-position: -144px 0;
+                background-color: #fff;
+            }
+            .np-div-33 {
+                width: 48px;
+                height: 48px;
+                flex: none;
+                border-radius: 12px;
+                box-sizing: border-box;
+                border: 3px solid #0b0c10;
+                margin-left: -14px;
+                background-image: url(../assets/agents.png);
+                background-size: 336px 48px;
+                background-position: -192px 0;
+                background-color: #fff;
+            }
+            .np-div-34 {
+                position: relative;
+                overflow: hidden;
+                background: #0b0c10;
+                color: #fafaf7;
+                border-radius: 32px;
+                padding: 104px 32px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 28px;
+            }
+            .np-div-35 {
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(circle, rgba(250, 250, 247, 0.3) 1px, transparent 1.6px);
+                background-size: 16px 16px;
+                -webkit-mask-image: radial-gradient(circle at 50% 120%, #000 0%, transparent 60%);
+                mask-image: radial-gradient(circle at 50% 120%, #000 0%, transparent 60%);
+                pointer-events: none;
+            }
+            .np-div-36 {
+                position: relative;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .np-h1-1 {
+                margin: 0;
+                font-size: clamp(36px, 5.6vw, 72px);
+                line-height: 1.04;
+                font-weight: 300;
+                letter-spacing: -0.04em;
+            }
+            .np-h2-1 {
+                margin: 0;
+                font-size: clamp(28px, 4vw, 46px);
+                line-height: 1.1;
+                font-weight: 300;
+                letter-spacing: -0.035em;
+            }
+            .np-h2-2 {
+                margin: 0;
+                font-size: clamp(30px, 4vw, 48px);
+                line-height: 1.08;
+                font-weight: 300;
+                letter-spacing: -0.035em;
+            }
+            .np-h2-3 {
+                position: relative;
+                margin: 0;
+                font-size: clamp(30px, 4.4vw, 56px);
+                line-height: 1.05;
+                font-weight: 300;
+                letter-spacing: -0.04em;
+            }
+            .np-h3-1 {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 500;
+                letter-spacing: -0.02em;
+            }
+            .np-h3-2 {
+                margin: 0;
+                font-size: 28px;
+                font-weight: 300;
+                letter-spacing: -0.03em;
+            }
+            .np-img-1 {
+                display: block;
+                width: 56px;
+                height: 56px;
+                flex: none;
+                border-radius: 14px;
+            }
+            .np-img-2 {
+                display: block;
+                width: 44px;
+                height: 44px;
+                flex: none;
+                border-radius: 11px;
+            }
+            .np-p-1 {
+                margin: 0;
+                max-width: 500px;
+                font-size: 19px;
+                line-height: 1.6;
+                color: #5b606c;
+            }
+            .np-p-2 {
+                margin: 0;
+                font-size: 15px;
+                line-height: 1.6;
+                color: #5b606c;
+            }
+            .np-p-3 {
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.6;
+                color: #5b606c;
+            }
+            .np-p-4 {
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #b4b8c2;
+            }
+            .np-p-5 {
+                margin: 12px 0 0;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #5b606c;
+                max-width: 640px;
+            }
+            .np-p-6 {
+                position: relative;
+                margin: 0;
+                max-width: 440px;
+                font-size: 17px;
+                line-height: 1.6;
+                color: #b4b8c2;
+            }
+            .np-section-1 {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 80px 32px 0;
+                box-sizing: border-box;
+            }
+            .np-section-2 {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 120px 32px 0;
+                box-sizing: border-box;
+            }
+            .np-section-3 {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 140px 32px 120px;
+                box-sizing: border-box;
+            }
+            .np-span-1 {
+                font-size: 13px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #5b606c;
+                border: 1px solid rgba(11, 12, 16, 0.12);
+                padding: 8px 16px;
+                border-radius: 999px;
+                background: #ffffff;
+            }
+            .np-span-2 {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #3f5bd9;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .np-span-3 {
+                font-style: italic;
+                padding-right: 0.06em;
+                background: linear-gradient(90deg, #0b0c10, #3f5bd9);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            .np-span-4 {
+                font-size: 13px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #5b606c;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .np-span-5 {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #3f5bd9;
+                flex: none;
+            }
+            .np-span-6 {
+                font-style: italic;
+                font-weight: 300;
+            }
+            .np-span-7 {
+                width: 64px;
+                font-size: 14px;
+                color: #5b606c;
+            }
+            .np-summary-1 {
+                cursor: pointer;
+                font-size: 20px;
+                letter-spacing: -0.01em;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+        </style>
+        <script src="../js/global.js" defer></script>
+    </head>
+    <body>
+        <div class="np-div-1">
+            <div id="site-header"></div>
+            <section class="np-section-1">
+                <div class="np-div-2"></div>
+                <div class="np-div-3"></div>
+                <div class="np-div-4">
+                    <div class="np-div-5">
+                        <span class="np-span-1"><span class="np-span-2"></span>Miki</span>
+                        <h1 class="np-h1-1">
+                            Your personal AI assistant, <span class="np-span-3">free for everyone.</span>
+                        </h1>
+                        <p class="np-p-1">
+                            Miki helps with homework, plans, writing and everyday life. Ask anything, any time.
+                        </p>
+                        <div class="np-div-6">
+                            <a href="../signin/" class="np-a-1">Start with Miki</a
+                            ><a href="#can" class="np-a-2">See what Miki can do</a>
+                        </div>
+                    </div>
+                    <div class="np-div-7">
+                        <div class="np-div-8">
+                            <div class="np-div-9">
+                                <img src="../assets/miki.png" alt="Miki" width="56" height="56" class="np-img-1" />
+                                <div>
+                                    <div class="np-div-10">Miki</div>
+                                    <div class="np-div-11">Your personal assistant</div>
+                                </div>
+                            </div>
+                            <div class="np-div-12">Can you plan my week? I have a maths test on Friday.</div>
+                            <div class="np-div-13">
+                                Of course! Let us put revision on Tuesday and Thursday and keep Wednesday free. Want me
+                                to add reminders?
+                            </div>
+                            <div class="np-div-12">Yes please</div>
+                            <div class="np-div-13">Done. I will remind you the evening before each session.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="can" class="np-section-2">
+                <div class="np-div-14">
+                    <span class="np-span-4"><span class="np-span-5"></span>What Miki can do</span>
+                    <h2 class="np-h2-1">One assistant. <span class="np-span-6">Lots of little helps.</span></h2>
+                </div>
+                <div class="np-div-15">
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <rect x="4" y="5" width="16" height="15" rx="3" />
+                                <path d="M4 10h16M9 3v4M15 3v4" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Plan your day</h3>
+                        <p class="np-p-2">Turn a busy list into a calm plan.</p>
+                    </div>
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M4 20l4-1 11-11-3-3L5 16z" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Write and edit</h3>
+                        <p class="np-p-2">Emails, essays and messages, polished.</p>
+                    </div>
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M5 4h10a3 3 0 013 3v13H8a3 3 0 01-3-3z" />
+                                <path d="M5 17a3 3 0 013-3h10" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Learn and explain</h3>
+                        <p class="np-p-2">Hard topics, explained step by step.</p>
+                    </div>
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="11" cy="11" r="6" />
+                                <path d="M20 20l-4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Research</h3>
+                        <p class="np-p-2">Quick, clear answers to your questions.</p>
+                    </div>
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M5 7l2 2 3-3M5 15l2 2 3-3M13 8h6M13 16h6" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Stay organized</h3>
+                        <p class="np-p-2">Reminders, to-dos and notes in one place.</p>
+                    </div>
+                    <div class="np-div-16">
+                        <div class="np-div-17">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#3F5BD9"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />
+                            </svg>
+                        </div>
+                        <h3 class="np-h3-1">Get creative</h3>
+                        <p class="np-p-2">Stories, names, gift ideas and more.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="who" class="np-section-2">
+                <div class="np-div-14">
+                    <span class="np-span-4"><span class="np-span-5"></span>Miki for everyone</span>
+                    <h2 class="np-h2-1">From kids to <span class="np-span-6">busy professionals.</span></h2>
+                </div>
+                <div class="np-div-18">
+                    <div class="np-div-19">
+                        <h3 class="np-h3-1">Kids</h3>
+                        <p class="np-p-2">Friendly help with homework and curious questions.</p>
+                    </div>
+                    <div class="np-div-19">
+                        <h3 class="np-h3-1">Students</h3>
+                        <p class="np-p-2">Study plans, summaries and practice questions.</p>
+                    </div>
+                    <div class="np-div-19">
+                        <h3 class="np-h3-1">Parents</h3>
+                        <p class="np-p-2">Meal plans, schedules and family organizing.</p>
+                    </div>
+                    <div class="np-div-19">
+                        <h3 class="np-h3-1">Professionals</h3>
+                        <p class="np-p-2">Drafts, research and a calmer inbox.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="day" class="np-section-2">
+                <div class="np-div-14">
+                    <span class="np-span-4"><span class="np-span-5"></span>A day with Miki</span>
+                    <h2 class="np-h2-1">Helpful from <span class="np-span-6">morning to night.</span></h2>
+                </div>
+                <div class="np-div-20">
+                    <div class="np-div-21">
+                        <span class="np-span-7">7:30</span
+                        ><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2" />
+                        <div class="np-div-22">
+                            <div class="np-div-23">Morning plan</div>
+                            <div class="np-div-24">Your day laid out, with time for what matters.</div>
+                        </div>
+                    </div>
+                    <div class="np-div-21">
+                        <span class="np-span-7">12:30</span
+                        ><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2" />
+                        <div class="np-div-22">
+                            <div class="np-div-23">Quick research</div>
+                            <div class="np-div-24">A fast answer, explained simply.</div>
+                        </div>
+                    </div>
+                    <div class="np-div-21">
+                        <span class="np-span-7">16:00</span
+                        ><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2" />
+                        <div class="np-div-22">
+                            <div class="np-div-23">Homework help</div>
+                            <div class="np-div-24">Step-by-step help, not just the answer.</div>
+                        </div>
+                    </div>
+                    <div class="np-div-21">
+                        <span class="np-span-7">21:00</span
+                        ><img src="../assets/miki.png" alt="Miki" width="44" height="44" class="np-img-2" />
+                        <div class="np-div-22">
+                            <div class="np-div-23">Tomorrow, sorted</div>
+                            <div class="np-div-24">Reminders set and everything ready.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="control" class="np-section-2">
+                <div class="np-div-14">
+                    <span class="np-span-4"><span class="np-span-5"></span>Your control</span>
+                    <h2 class="np-h2-1">Miki suggests. <span class="np-span-6">You decide.</span></h2>
+                </div>
+                <div class="np-div-15">
+                    <div class="np-div-25">
+                        <h3 class="np-h3-1">You decide</h3>
+                        <p class="np-p-2">Miki offers ideas and drafts. You choose what to use.</p>
+                    </div>
+                    <div class="np-div-25">
+                        <h3 class="np-h3-1">Your privacy</h3>
+                        <p class="np-p-2">[Add your privacy promise here.]</p>
+                    </div>
+                    <div class="np-div-25">
+                        <h3 class="np-h3-1">Made for younger users too</h3>
+                        <p class="np-p-2">[Add details about safety for younger users.]</p>
+                    </div>
+                </div>
+            </section>
+            <section id="free" class="np-section-2">
+                <div class="np-div-26">
+                    <div class="np-div-27">
+                        <h2 class="np-h2-2">Miki is <span class="np-span-6">free for everyone.</span></h2>
+                        <p class="np-p-3">No tiers to compare. Just say hello.</p>
+                        <div><a href="../signin/" class="np-a-1">Start with Miki</a></div>
+                    </div>
+                    <div class="np-div-28">
+                        <div class="np-div-29">
+                            <div class="np-div-30"></div>
+                            <div class="np-div-31"></div>
+                            <div class="np-div-32"></div>
+                            <div class="np-div-33"></div>
+                        </div>
+                        <h3 class="np-h3-2">Need more than an assistant?</h3>
+                        <p class="np-p-4">AI Teammate brings a team of agents to your business.</p>
+                        <div><a href="../ai-teammate/" class="np-a-3">See AI Teammate</a></div>
+                    </div>
+                </div>
+            </section>
+            <section id="faq" class="np-section-2">
+                <div class="np-div-14">
+                    <span class="np-span-4"><span class="np-span-5"></span>FAQ</span>
+                    <h2 class="np-h2-1">Quick <span class="np-span-6">answers.</span></h2>
+                </div>
+                <div class="np-div-20">
+                    <details class="np-details-1">
+                        <summary class="np-summary-1">Is Miki really free?</summary>
+                        <p class="np-p-5">Yes. Miki is free for everyone.</p>
+                    </details>
+                    <details class="np-details-1">
+                        <summary class="np-summary-1">Who can use Miki?</summary>
+                        <p class="np-p-5">Anyone, from kids to professionals.</p>
+                    </details>
+                    <details class="np-details-1">
+                        <summary class="np-summary-1">Is Miki safe for kids?</summary>
+                        <p class="np-p-5">[Add your answer about safety for younger users.]</p>
+                    </details>
+                    <details class="np-details-1">
+                        <summary class="np-summary-1">Can I use Miki for my business?</summary>
+                        <p class="np-p-5">Miki is made for personal use. For business, see AI Teammate.</p>
+                    </details>
+                </div>
+            </section>
+            <section id="start" class="np-section-3">
+                <div class="np-div-34">
+                    <div class="np-div-35"></div>
+                    <h2 class="np-h2-3">Say hello to <span class="np-span-6">Miki.</span></h2>
+                    <p class="np-p-6">Free for everyone.</p>
+                    <div class="np-div-36"><a href="../signin/" class="np-a-3">Start with Miki</a></div>
+                </div>
+            </section>
+            <div id="site-footer"></div>
+        </div>
+    </body>
 </html>
