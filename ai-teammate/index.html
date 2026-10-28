@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Teammate | Bainbot</title>
+<meta name="description" content="AI teammates for your business: sales, support, marketing and operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+/* Styles for this page (class names start with np- so they never clash with styles.css) */
+summary{list-style:none}
+.np-a-1{background:#0B0C10;color:#FAFAF7;font-weight:500;box-shadow:0 8px 24px rgba(11,12,16,0.2);font-size:15px;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-a-2{color:#0B0C10;border:1px solid rgba(11,12,16,0.18);font-size:15px;padding:14px 28px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-a-3{background:#FAFAF7;color:#0B0C10;font-size:15px;font-weight:500;padding:14px 32px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-a-4{color:#FAFAF7;border:1px solid rgba(250,250,247,0.3);font-size:15px;padding:14px 32px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.np-div-1{width:100%;box-sizing:border-box;background:#FAFAF7;color:#0B0C10;font-family:'Poppins',system-ui,sans-serif;overflow-x:clip}
+.np-div-11{font-size:13px;color:#5B606C}
+.np-div-14{display:flex;flex-direction:column;gap:16px;margin-bottom:56px;max-width:720px}
+.np-div-19{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:200px;justify-content:flex-end}
+.np-div-34{position:relative;overflow:hidden;background:#0B0C10;color:#FAFAF7;border-radius:32px;padding:104px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.np-div-35{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(250,250,247,0.3) 1px,transparent 1.6px);background-size:16px 16px;-webkit-mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);mask-image:radial-gradient(circle at 50% 120%,#000 0%,transparent 60%);pointer-events:none}
+.np-div-36{position:relative;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.np-div-37{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.np-div-38{padding:12px;border-radius:28px;background:rgba(11,12,16,0.04);border:1px solid rgba(11,12,16,0.1);box-shadow:0 40px 140px rgba(90,120,230,0.22)}
+.np-div-39{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.np-div-40{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:28px;display:flex;flex-direction:column;gap:20px}
+.np-div-41{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-0px 0;background-color:#fff}
+.np-div-42{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-64px 0;background-color:#fff}
+.np-div-43{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-128px 0;background-color:#fff}
+.np-div-44{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-192px 0;background-color:#fff}
+.np-div-45{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-256px 0;background-color:#fff}
+.np-div-46{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-320px 0;background-color:#fff}
+.np-div-47{width:64px;height:64px;flex:none;border-radius:16px;box-sizing:border-box;background-image:url(../assets/agents.png);background-size:448px 64px;background-position:-384px 0;background-color:#fff}
+.np-div-48{border:1px dashed rgba(11,12,16,0.2);border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.np-div-49{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px}
+.np-div-50{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px;display:flex;flex-direction:column;gap:28px}
+.np-div-51{display:flex;flex-direction:column;gap:10px}
+.np-div-52{margin-left:auto;max-width:90%;background:#DCE5FF;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.5}
+.np-div-53{max-width:90%;background:#EEEFF3;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.5}
+.np-div-54{border:1px solid rgba(11,12,16,0.1);border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.np-div-55{font-size:15px}
+.np-div-56{font-size:13px;color:#5B606C;margin-top:4px}
+.np-div-57{display:flex;gap:10px}
+.np-div-58{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.np-div-59{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:32px;display:flex;flex-direction:column;gap:20px}
+.np-div-60{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:40px}
+.np-div-61{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(11,12,16,0.14)}
+.np-div-62{display:flex;gap:20px;flex-wrap:wrap;align-items:stretch}
+.np-div-63{flex:1 1 380px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px}
+.np-div-64{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);padding:36px 32px;display:flex;flex-direction:column;gap:12px;min-height:160px;justify-content:flex-end}
+.np-div-65{background:#FFFFFF;border:1px solid rgba(11,12,16,0.08);border-radius:24px;box-shadow:0 1px 2px rgba(11,12,16,0.04),0 16px 40px rgba(11,12,16,0.05);flex:1 1 380px;padding:32px}
+.np-div-66{font-size:18px;font-weight:500;margin-bottom:12px}
+.np-div-67{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid rgba(11,12,16,0.1);font-size:15px}
+.np-div-68{display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
+.np-div-69{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:760px}
+.np-h1-2{margin:0;max-width:860px;font-size:clamp(32px,5vw,60px);line-height:1.06;font-weight:300;letter-spacing:-0.04em}
+.np-h2-1{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-0.035em}
+.np-h2-3{position:relative;margin:0;font-size:clamp(30px,4.4vw,56px);line-height:1.05;font-weight:300;letter-spacing:-0.04em}
+.np-h2-4{margin:0;max-width:720px;font-size:clamp(28px,3.6vw,42px);line-height:1.1;font-weight:300;letter-spacing:-0.035em}
+.np-h3-1{margin:0;font-size:22px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-3{margin:0 0 8px;font-size:19px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-4{margin:0;font-size:19px;font-weight:500}
+.np-h3-5{margin:0 0 8px;font-size:24px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-6{margin:0 0 8px;font-size:22px;font-weight:500;letter-spacing:-0.02em}
+.np-h3-7{margin:0;font-size:24px;font-weight:500;letter-spacing:-0.02em}
+.np-img-3{display:block;width:100%;height:auto;border-radius:18px}
+.np-p-2{margin:0;font-size:15px;line-height:1.6;color:#5B606C}
+.np-p-6{position:relative;margin:0;max-width:440px;font-size:17px;line-height:1.6;color:#B4B8C2}
+.np-p-7{margin:0;max-width:540px;font-size:18px;line-height:1.6;color:#5B606C}
+.np-p-8{margin:0;font-size:15px;line-height:1.55;color:#5B606C}
+.np-section-2{max-width:1200px;margin:0 auto;padding:120px 32px 0;box-sizing:border-box}
+.np-section-3{max-width:1200px;margin:0 auto;padding:140px 32px 120px;box-sizing:border-box}
+.np-section-4{max-width:1200px;margin:0 auto;padding:80px 32px 0;box-sizing:border-box;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.np-section-5{max-width:1200px;margin:0 auto;padding:64px 32px 0;box-sizing:border-box}
+.np-span-1{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;border:1px solid rgba(11,12,16,0.12);padding:8px 16px;border-radius:999px;background:#FFFFFF}
+.np-span-2{width:6px;height:6px;border-radius:50%;background:#3F5BD9;display:inline-block;margin-right:10px}
+.np-span-4{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#5B606C;display:flex;align-items:center;gap:10px}
+.np-span-5{width:6px;height:6px;border-radius:50%;background:#3F5BD9;flex:none}
+.np-span-6{font-style:italic;font-weight:300}
+.np-span-8{background:#0B0C10;color:#FAFAF7;font-size:14px;font-weight:500;padding:10px 20px;border-radius:999px}
+.np-span-9{border:1px solid rgba(11,12,16,0.18);font-size:14px;padding:10px 20px;border-radius:999px}
+.np-span-10{font-size:14px;color:#3F5BD9;letter-spacing:0.08em}
+.np-span-11{width:8px;height:8px;border-radius:50%;background:#3F5BD9;flex:none}
+.np-span-12{flex:1}
+.np-span-13{border:1px solid rgba(11,12,16,0.14);border-radius:999px;padding:12px 24px;font-size:15px;background:#FFFFFF}
+</style>
+<script src="../js/global.js" defer></script>
+</head>
+<body>
+<div class="np-div-1">
+<div id="site-header"></div>
+<section class="np-section-4"><span class="np-span-1"><span class="np-span-2"></span>AI Teammate for business</span><h1 class="np-h1-2">A whole team, <span class="np-span-6">without the hiring.</span></h1><p class="np-p-7">AI teammates for sales, support, marketing and operations. You approve every step.</p><div class="np-div-37"><a href="../signin/" class="np-a-1">Start building</a><a href="../contact/" class="np-a-2">Talk to sales</a></div></section>
+<section id="shot" class="np-section-5"><div class="np-div-38"><img src="../assets/dashboard.png" alt="The Bainbot dashboard" class="np-img-3"></div></section>
+<section id="team" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Teammates</span><h2 class="np-h2-1">Seven teammates. <span class="np-span-6">Every role covered.</span></h2></div><div class="np-div-39"><div class="np-div-40"><div class="np-div-41"></div><div><h3 class="np-h3-3">Chief of Staff</h3><p class="np-p-8">Your single point of contact. Briefs the team and reports back.</p></div></div><div class="np-div-40"><div class="np-div-42"></div><div><h3 class="np-h3-3">Executive Assistant</h3><p class="np-p-8">Starts your day with a briefing and keeps the admin moving.</p></div></div><div class="np-div-40"><div class="np-div-43"></div><div><h3 class="np-h3-3">Research Agent</h3><p class="np-p-8">Finds, checks and verifies the brands and facts behind every decision.</p></div></div><div class="np-div-40"><div class="np-div-44"></div><div><h3 class="np-h3-3">Sales Outreach</h3><p class="np-p-8">Writes personal outreach and follow-ups. You approve every send.</p></div></div><div class="np-div-40"><div class="np-div-45"></div><div><h3 class="np-h3-3">Growth Marketer</h3><p class="np-p-8">Turns your plan into content that is ready to publish.</p></div></div><div class="np-div-40"><div class="np-div-46"></div><div><h3 class="np-h3-3">Customer Support</h3><p class="np-p-8">Sorts new conversations and flags the ones that need a human.</p></div></div><div class="np-div-40"><div class="np-div-47"></div><div><h3 class="np-h3-3">Analyst</h3><p class="np-p-8">Connects to your data and turns it into plain answers.</p></div></div><div class="np-div-48"><h3 class="np-h3-4">Add your own</h3><p class="np-p-8">Need a role we do not have? Create your own teammate.</p></div></div></section>
+<section id="tasks" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Chat and Tasks</span><h2 class="np-h2-1">Simple on the surface. <span class="np-span-6">Serious underneath.</span></h2></div><div class="np-div-49"><div class="np-div-50"><div><h3 class="np-h3-5">Just ask. It handles the rest.</h3><p class="np-p-2">Talk to your Chief of Staff in plain language. It briefs the right teammate for you.</p></div><div class="np-div-51"><div class="np-div-52">What is the latest on our ecommerce outreach campaign?</div><div class="np-div-53">Research has verified 12 of 20 brands. A three-email sequence is ready for your review.</div></div></div><div class="np-div-50"><div><h3 class="np-h3-5">Every draft waits for you</h3><p class="np-p-2">Review, edit and approve in Tasks. Only then does anything go out.</p></div><div class="np-div-54"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0C10" stroke-width="1.5" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg><div><div class="np-div-55">Outreach campaign draft</div><div class="np-div-56">3 emails · Ready to review</div></div></div><div class="np-div-57"><span class="np-span-8">Approve</span><span class="np-span-9">Edit</span></div></div></div></section>
+<section id="control" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Control</span><h2 class="np-h2-1">Powerful, but <span class="np-span-6">never on its own.</span></h2></div><div class="np-div-58"><div class="np-div-19"><h3 class="np-h3-1">Approval comes first</h3><p class="np-p-2">Your agents prepare the work, then wait for your sign-off before anything is sent.</p></div><div class="np-div-19"><h3 class="np-h3-1">Permissions you set</h3><p class="np-p-2">Each agent works only within the access you give it, like read-only research.</p></div></div></section>
+<section id="business" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>For business</span><h2 class="np-h2-1">Built for <span class="np-span-6">every team in your business.</span></h2></div><div class="np-div-58"><div class="np-div-59"><div class="np-div-44"></div><div><h3 class="np-h3-6">Sales</h3><p class="np-p-2">Research prospects, draft outreach and follow up.</p></div></div><div class="np-div-59"><div class="np-div-46"></div><div><h3 class="np-h3-6">Support</h3><p class="np-p-2">Sort conversations and flag what needs a person.</p></div></div><div class="np-div-59"><div class="np-div-45"></div><div><h3 class="np-h3-6">Marketing</h3><p class="np-p-2">Plan content and prepare drafts for review.</p></div></div><div class="np-div-59"><div class="np-div-42"></div><div><h3 class="np-h3-6">Operations</h3><p class="np-p-2">Daily briefings and admin, handled.</p></div></div><div class="np-div-59"><div class="np-div-47"></div><div><h3 class="np-h3-6">Insights</h3><p class="np-p-2">Answers from your data, in plain language.</p></div></div><div class="np-div-59"><div class="np-div-43"></div><div><h3 class="np-h3-6">Research</h3><p class="np-p-2">Verify before you reach out.</p></div></div></div></section>
+<section id="onboard" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Getting started</span><h2 class="np-h2-1">Onboard an AI teammate <span class="np-span-6">in three steps.</span></h2></div><div class="np-div-60"><div class="np-div-61"><span class="np-span-10">01</span><h3 class="np-h3-7">Pick the role</h3><p class="np-p-2">Choose the teammate your business needs.</p></div><div class="np-div-61"><span class="np-span-10">02</span><h3 class="np-h3-7">Share the context</h3><p class="np-p-2">Add your goals, tone and rules in plain language.</p></div><div class="np-div-61"><span class="np-span-10">03</span><h3 class="np-h3-7">Set the approvals</h3><p class="np-p-2">Decide what needs your sign-off, then let them work.</p></div></div></section>
+<section id="govern" class="np-section-2"><div class="np-div-14"><span class="np-span-4"><span class="np-span-5"></span>Admin and control</span><h2 class="np-h2-1">Governance <span class="np-span-6">your business can trust.</span></h2></div><div class="np-div-62"><div class="np-div-63"><div class="np-div-64"><h3 class="np-h3-1">Roles and permissions</h3><p class="np-p-2">Decide who can do what.</p></div><div class="np-div-64"><h3 class="np-h3-1">Approval workflows</h3><p class="np-p-2">Sign-off before anything goes out.</p></div><div class="np-div-64"><h3 class="np-h3-1">Activity history</h3><p class="np-p-2">See what every teammate did and when.</p></div><div class="np-div-64"><h3 class="np-h3-1">[Security and SSO]</h3><p class="np-p-2">[Add details if you offer them.]</p></div></div><div class="np-div-65"><div class="np-div-66">Activity history</div><div class="np-div-67"><span class="np-span-11"></span><span class="np-span-12">Chief of Staff reported on the outreach campaign</span><span class="np-div-11">9:41</span></div><div class="np-div-67"><span class="np-span-11"></span><span class="np-span-12">Research verified 12 of 20 brands</span><span class="np-div-11">9:28</span></div><div class="np-div-67"><span class="np-span-11"></span><span class="np-span-12">Sales Outreach drafted 3 emails</span><span class="np-div-11">9:15</span></div><div class="np-div-67"><span class="np-span-11"></span><span class="np-span-12">Growth Marketer finished the content plan</span><span class="np-div-11">9:04</span></div></div></div></section>
+<section id="connect" class="np-section-2"><div class="np-div-68"><h2 class="np-h2-4">Plugs into the tools <span class="np-span-6">you already use.</span></h2><div class="np-div-69"><span class="np-span-13">Email</span><span class="np-span-13">Calendar</span><span class="np-span-13">CRM</span><span class="np-span-13">Analytics</span><span class="np-span-13">Docs</span><span class="np-span-13">[Your tool]</span></div></div></section>
+<section id="start" class="np-section-3"><div class="np-div-34">
+<div class="np-div-35"></div>
+<h2 class="np-h2-3">Ready to build your <span class="np-span-6">team?</span></h2>
+<p class="np-p-6">Start with one Chief of Staff. Add teammates as you grow.</p>
+<div class="np-div-36"><a href="../signin/" class="np-a-3">Start building</a><a href="../contact/" class="np-a-4">Talk to us</a></div></div></section>
+<div id="site-footer"></div>
+</div>
+</body>
+</html>
